@@ -30,7 +30,7 @@ with open(r'../demo_data/omnidocbench_demo/OmniDocBench_demo.json', 'r', encodin
 
 def text_norm(text):
     after_text = replace_repeated_chars(text)
-    return after_text.replace('/t', '\t').replace('/n', '\n')
+    return after_text.replace('/t', '\t').replace("\\t", '\t').replace('/n', '\n')
 
 # 标准化所有连续的字符
 def replace_repeated_chars(input_str):
