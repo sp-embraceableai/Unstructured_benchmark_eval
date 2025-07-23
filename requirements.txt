@@ -1,0 +1,15 @@
+unstructured[pdf]
+unstructured[local-inference]
+torch
+torchvision
+pandas
+matplotlib
+seaborn
+plotly
+pypdf
+pdfplumber
+pillow
+opencv-python
+numpy
+scikit-learn
+pi-heif 
