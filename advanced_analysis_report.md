@@ -173,3 +173,18 @@ table_heavy                    17.310  19.948  0.499  77.118    18        17.310
 - Try with a PDF known to have machine-readable tables (not scanned or image-based).
 - Experiment with Unstructured's table extraction settings or alternative tools for table detection.
 - Consider extracting and analyzing random chunks from deeper in the document or from other PDFs for comparison.
+
+## 🧪 Table Extraction with `strategy="hi_res"`
+
+The benchmark was re-run using Unstructured's `strategy="hi_res"` for all documents to improve table detection.
+
+### Results
+- **Tables detected:** 0 (no `Table` elements found in any document)
+- **Text elements:** 282,107 (in table-heavy docs)
+- **Chunking:** All content is still being chunked as text, not as tables.
+
+### Conclusion
+Even with the high-resolution strategy, Unstructured did not detect any tables in the current set of budget PDFs. This strongly suggests that the tables in these PDFs are not encoded in a way that Unstructured (or most PDF parsers) can recognize as structured tables—they are likely just lines of text or images.
+
+### Recommendation
+To confirm Unstructured's table detection works, test with a PDF that is known to have machine-readable tables (e.g., exported from Excel or a simple table from Wikipedia as PDF). If tables are still not detected, further investigation into Unstructured's configuration or capabilities may be needed.
