@@ -104,6 +104,39 @@ python advanced_analyzer.py
 - **OpenGovData scan-based reports** (environmental impact PDFs)
 - **Zensus 2022 reports** with images and graphics
 
+## 📝 Qualitative Chunk Analysis: Table-Heavy PDFs
+
+### Sample: `bw_budget_15_14_Epl.pdf`
+
+- **Total elements extracted:** 101,004
+- **First 10 chunks:**
+  1. Title: Staatshaushaltsplan
+  2. Text: für 2025/2026
+  3. Title: Einzelplan 14
+  4. Title: Ministerium für Wissenschaft, Forschung und Kunst
+  5. NarrativeText: Für den Druck wurde klimaneutral produziertes, weißes Papier verwendet
+  6. Title: Inhalt
+  7. Title: Betragsteil Seite
+  8. Title: Inhalt
+  9. Text: Vorwort ....................................................................................................
+  10. Text: 4
+
+#### **Qualitative Observations**
+- **No Table Elements:** All chunks are of type `Title`, `Text`, or `NarrativeText`. No `Table` elements detected.
+- **Chunk Content:** Mostly headings, section titles, and introductory text. Some lines show dotted formatting, likely from a table of contents or tabular layout rendered as plain text.
+- **No Tabular Structure:** No evidence of preserved table structure (no rows/columns, delimiters, or tabular formatting).
+- **Flattened Tables:** If tables exist, they are being flattened into plain text or not detected as tables at all.
+
+#### **Conclusion**
+- Unstructured is not recognizing tables as structured elements in this document. All content is chunked as text or titles.
+- Tables are likely being flattened into lines of text, losing their row/column structure.
+- No evidence of table-specific chunking in the output.
+
+#### **Next Steps**
+- Try with a PDF known to have machine-readable tables (not scanned or image-based).
+- Experiment with Unstructured's table extraction settings or alternative tools for table detection.
+- Consider extracting and analyzing random chunks from deeper in the document or from other PDFs for comparison.
+
 ## 🔧 Scripts Overview
 
 ### `benchmark_runner.py`
