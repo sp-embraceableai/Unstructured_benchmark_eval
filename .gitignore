@@ -1,21 +1,8 @@
-# PDF files (too large for git)
-*.pdf
-
-# Generated data files
-benchmark_results.json
-benchmark.log
-advanced_analysis_report.md
-
-# Analysis plots (can be regenerated)
-analysis_plots/
-
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -32,38 +19,11 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# Environments
-.env
-.venv
-env/
+# Virtual environments
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
@@ -82,4 +42,36 @@ venv.bak/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# PDF files (input documents - too large for git)
+*.pdf
+
+# Data files (exclude large JSON files)
+*.json
+!requirements.txt
+!package.json
+
+# Results and reports (keep only the final ones)
+benchmark_results.json
+table_chunk_comparisons.json
+benchmark.log
+
+# Temporary files
+*.tmp
+*.temp
+*.out
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 
