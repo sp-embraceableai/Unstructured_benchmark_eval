@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Unstructured vs Docling Performance Benchmark Framework
+Unstructured Performance Benchmark Framework
 Main Entry Point
 
 This script provides easy access to all main functionalities:
 1. Basic benchmarking (Unstructured only)
-2. Chunk quality comparison
+2. Single document chunk extraction and analysis
 3. Category-based analysis
-4. Advanced Docling testing
+4. All analyses combined
 """
 
 import sys
@@ -16,21 +16,20 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Unstructured vs Docling Performance Benchmark Framework",
+        description="Unstructured Performance Benchmark Framework",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   python main.py benchmark                    # Run basic Unstructured benchmark
-  python main.py quality                      # Run chunk quality comparison
+  python main.py extract <pdf_file>          # Extract chunks from single PDF
   python main.py category                     # Run category-based analysis
-  python main.py test-docling                 # Test advanced Docling features
   python main.py all                          # Run all analyses
         """
     )
     
     parser.add_argument(
         'command',
-        choices=['benchmark', 'quality', 'category', 'test-docling', 'all'],
+        choices=['benchmark', 'extract', 'category', 'all'],
         help='Command to run'
     )
     
@@ -38,6 +37,11 @@ Examples:
         '--verbose', '-v',
         action='store_true',
         help='Verbose output'
+    )
+    
+    parser.add_argument(
+        '--file', '-f',
+        help='PDF file path (for extract command)'
     )
     
     args = parser.parse_args()
@@ -52,17 +56,34 @@ Examples:
     
     try:
         if args.command == 'benchmark':
-            print("🚀 Running basic Unstructured benchmark...")
-            from benchmark_runner import UnstructuredBenchmark
-            benchmark = UnstructuredBenchmark()
-            benchmark.run_benchmarks()
-            print("✅ Basic benchmark completed!")
+            print("🚀 Running Unstructured benchmark...")
+            from unstructured_only_benchmark import UnstructuredOnlyBenchmark
+            benchmark = UnstructuredOnlyBenchmark()
+            results = benchmark.run_benchmarks()
             
-        elif args.command == 'quality':
-            print("🔍 Running chunk quality comparison...")
-            from chunk_quality_comparison import main as quality_main
-            quality_main()
-            print("✅ Quality comparison completed!")
+            if results:
+                benchmark.save_results()
+                benchmark.print_summary()
+                benchmark.generate_report()
+                print("✅ Benchmark completed!")
+                print("📁 Results saved to:")
+                print("   - data/unstructured_benchmark_results.json")
+                print("   - reports/unstructured_benchmark_report.md")
+                print("   - benchmark.log")
+            else:
+                print("❌ No documents were processed. Check the benchmarks directory.")
+            
+        elif args.command == 'extract':
+            if not args.file:
+                print("❌ Please provide a PDF file path with --file or -f")
+                print("Example: python main.py extract --file benchmarks/short_text/sample.pdf")
+                return
+            
+            print(f"🔍 Extracting chunks from: {args.file}")
+            from extract_chunks_unstructured import extract_document_chunks, print_chunk_analysis
+            results = extract_document_chunks(args.file, strategy="hi_res")
+            print_chunk_analysis(results)
+            print("✅ Chunk extraction completed!")
             
         elif args.command == 'category':
             print("📊 Running category-based analysis...")
@@ -70,31 +91,22 @@ Examples:
             run_category_comparison()
             print("✅ Category analysis completed!")
             
-        elif args.command == 'test-docling':
-            print("🧪 Testing advanced Docling features...")
-            from test_advanced_docling import main as test_main
-            test_main()
-            print("✅ Docling testing completed!")
-            
         elif args.command == 'all':
             print("🎯 Running all analyses...")
             
-            print("\n1️⃣ Running basic benchmark...")
-            from benchmark_runner import UnstructuredBenchmark
-            benchmark = UnstructuredBenchmark()
-            benchmark.run_benchmarks()
+            print("\n1️⃣ Running Unstructured benchmark...")
+            from unstructured_only_benchmark import UnstructuredOnlyBenchmark
+            benchmark = UnstructuredOnlyBenchmark()
+            results = benchmark.run_benchmarks()
             
-            print("\n2️⃣ Running quality comparison...")
-            from chunk_quality_comparison import main as quality_main
-            quality_main()
+            if results:
+                benchmark.save_results()
+                benchmark.print_summary()
+                benchmark.generate_report()
             
-            print("\n3️⃣ Running category analysis...")
+            print("\n2️⃣ Running category analysis...")
             from run_category_chunk_comparison import run_category_comparison
             run_category_comparison()
-            
-            print("\n4️⃣ Testing Docling features...")
-            from test_advanced_docling import main as test_main
-            test_main()
             
             print("\n✅ All analyses completed!")
             print("\n📄 Reports generated in 'reports/' directory")
@@ -102,7 +114,7 @@ Examples:
             
     except ImportError as e:
         print(f"❌ Import error: {e}")
-        print("💡 Make sure all dependencies are installed: pip install -r requirements.txt")
+        print("💡 Make sure all dependencies are installed: pip install -r requirements_unstructured_only.txt")
         sys.exit(1)
     except Exception as e:
         print(f"❌ Error running {args.command}: {e}")
