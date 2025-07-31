@@ -400,7 +400,7 @@ result/
   </thead>
   <tbody>
     <tr>
-      <td rowspan="8">Pipeline Tools</td>
+      <td rowspan="9">Pipeline Tools</td>
       <td>MinerU-pipeline-2.1.1</sup></td>
       <td>0.162</td>
       <td>0.244</td>
@@ -452,6 +452,23 @@ result/
       <td>0.329</td>
     </tr>
     <tr>
+      <td>PaddleOCR PP-StructureV3</sup></td>
+      <td>0.152</td>
+      <td>0.223</td>
+      <td>0.073</td>
+      <td>0.136</td>
+      <td>0.295</td>
+      <td>0.535</td>
+      <td>81.8</td>
+      <td>52.1</td>
+      <td>76.1</td>
+      <td>82.7</td>
+      <td>0.162</td>
+      <td>0.111</td>
+      <td>0.077</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
       <td>Mathpix</sup></td>
       <td>0.191</td>
       <td>0.364</td>
@@ -459,8 +476,8 @@ result/
       <td>0.381</td>
       <td>0.306</td>
       <td>0.454</td>
-      <td><u>82.7</u></td>
-      <td>64.6</td>
+      <td><ins>82.7</ins></td>
+      <td><ins>64.6</ins></td>
       <td>77.0</td>
       <td>67.1</td>
       <td>0.243</td>
@@ -491,7 +508,7 @@ result/
       <td>0.528</td>
       <td>0.138</td>
       <td>0.356</td>
-      <td><u>0.276</u></td>
+      <td><ins>0.276</ins></td>
       <td>0.611</td>
       <td>78.4</td>
       <td>39.6</td>
@@ -542,17 +559,17 @@ result/
       <td><strong>0.133</strong></td>
       <td>0.238</td>
       <td><strong>0.045</strong></td>
-      <td><u>0.115</u></td>
+      <td><ins>0.115</ins></td>
       <td><strong>0.273</strong></td>
       <td>0.506</td>
       <td>79.0</td>
       <td>50.8</td>
-      <td><u>82.1</u></td>
-      <td><u>83.4</u></td>
-      <td><u>0.15</u></td>
+      <td><ins>82.1</ins></td>
+      <td><ins>83.4</ins></td>
+      <td><ins>0.15</ins></td>
       <td>0.209</td>
-      <td><u>0.066</u></td>
-      <td><u>0.122</u></td>
+      <td><ins>0.066</ins></td>
+      <td><ins>0.122</ins></td>
     </tr>
     <tr>
       <td>MonkeyOCR-pro-1.2B</sup></td>
@@ -567,7 +584,7 @@ result/
       <td>77.7</td>
       <td>79.9</td>
       <td>0.164</td>
-      <td><u>0.168</u></td>
+      <td><ins>0.168</ins></td>
       <td>0.094</td>
       <td>0.243</td>
     </tr>
@@ -728,12 +745,12 @@ result/
     </tr>
     <tr>
       <td>Gemini2.5-Pro</td>
-      <td><u>0.148</u></td>
+      <td><ins>0.148</ins></td>
       <td><strong>0.212</strong></td>
-      <td><u>0.055</u></td>
+      <td><ins>0.055</ins></td>
       <td>0.168</td>
       <td>0.356</td>
-      <td><u>0.439</u></td>
+      <td><ins>0.439</ins></td>
       <td>80.0</td>
       <td><strong>69.4</strong></td>
       <td><strong>85.8</strong></td>
@@ -797,13 +814,13 @@ result/
     <tr>
       <td>Qwen2.5-VL-72B</td>
       <td>0.214</td>
-      <td><u>0.261</u></td>
+      <td><ins>0.261</ins></td>
       <td>0.092</td>
       <td>0.18</td>
       <td>0.315</td>
       <td><strong>0.434</strong></td>
       <td>81.4</td>
-      <td><u>64.1</u></td>
+      <td>64.1</td>
       <td>81.4</td>
       <td>83.0</td>
       <td>0.341</td>
@@ -996,10 +1013,15 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
     </tr>
     <tr>
       <td>Mathpix</td>
-      <td><u>86.6</u></td>
+      <td><ins>86.6</ins></td>
       <td>2.8</td>
       <td><b>66.56</b></td>
       <td>0.322</td>
+    </tr>
+    <tr>
+      <td>PaddleOCR PP-StructureV3</td>
+      <td><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></td>
+      <td><a href="https://www.paddleocr.ai/latest/version3.x/pipeline_usage/PP-StructureV3.html">PP-StructureV3</a></td>
     </tr>
     <tr>
       <td>Pix2Tex</td>
@@ -1011,8 +1033,8 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
     <tr>
       <td>UniMERNet-B</td>
       <td>85.0</td>
-      <td><u>60.2</u></td>
-      <td><u>60.84</u></td>
+      <td><ins>60.2</ins></td>
+      <td><ins>60.84</ins></td>
       <td><b>0.238</b></td>
     </tr>
     <tr>
@@ -1020,7 +1042,7 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
       <td><b>86.8</b></td>
       <td><b>65.5</b></td>
       <td>45.17</td>
-      <td><u>0.282</u></td>
+      <td><ins>0.282</ins></td>
     </tr>
     <tr>
       <td>InternVL2-Llama3-76B</td>
@@ -1174,27 +1196,27 @@ OmniDocBench包含每个PDF页面的所有文字的bounding box信息以及对�
       <td>PaddleOCR</td>
       <td>0.071</td>
       <td><b>0.055</b></td>
-      <td><u>0.118</u></td>
+      <td><ins>0.118</ins></td>
       <td><b>0.060</b></td>
       <td><b>0.038</b></td>
-      <td><u>0.085</u></td>
+      <td><ins>0.085</ins></td>
       <td><b>0.060</b></td>
       <td><b>0.015</b></td>
-      <td><u>0.285</u></td>
+      <td><ins>0.285</ins></td>
       <td><b>0.021</b></td>
     </tr>
     <tr>
       <td>OpenOCR</td>
       <td>0.07</td>
-      <td><u>0.068</u></td>
+      <td><ins>0.068</ins></td>
       <td><b>0.106</b></td>
-      <td><u>0.069</u></td>
+      <td><ins>0.069</ins></td>
       <td>0.058</td>
       <td><b>0.081</b></td>
-      <td><u>0.069</u></td>
-      <td><u>0.038</u></td>
+      <td><ins>0.069</ins></td>
+      <td><ins>0.038</ins></td>
       <td>0.891</td>
-      <td><u>0.025</u></td>
+      <td><ins>0.025</ins></td>
     </tr>
     <tr>
       <td>Tesseract-OCR</td>
@@ -1237,14 +1259,14 @@ OmniDocBench包含每个PDF页面的所有文字的bounding box信息以及对�
     </tr>
     <tr>
       <td>Mathpix</td>
-      <td><u>0.033</u></td>
+      <td><ins>0.033</ins></td>
       <td>0.240</td>
       <td>0.261</td>
       <td>0.185</td>
       <td>0.121</td>
       <td>0.166</td>
       <td>0.180</td>
-      <td><u>0.038</u></td>
+      <td><ins>0.038</ins></td>
       <td><b>0.185</b></td>
       <td>0.638</td>
     </tr>
@@ -1254,7 +1276,7 @@ OmniDocBench包含每个PDF页面的所有文字的bounding box信息以及对�
       <td>0.112</td>
       <td>0.135</td>
       <td>0.092</td>
-      <td><u>0.052</u></td>
+      <td><ins>0.052</ins></td>
       <td>0.155</td>
       <td>0.091</td>
       <td>0.562</td>
@@ -1408,16 +1430,16 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
     <tr>
       <td rowspan="2" style="text-align: center;">OCR-based Models</td>
       <td>PaddleOCR</td>
-      <td><u>76.8</u></td>
+      <td><ins>76.8</ins></td>
       <td>71.8</td>
       <td>80.1</td>
       <td>67.9</td>
       <td>74.3</td>
-      <td><u>81.1</u></td>
+      <td><ins>81.1</ins></td>
       <td>74.5</td>
-      <td><u>70.6/75.2</u></td>
-      <td><u>71.3/74.1</u></td>
-      <td><u>72.7/74.0</u></td>
+      <td><ins>70.6/75.2</ins></td>
+      <td><ins>71.3/74.1</ins></td>
+      <td><ins>72.7/74.0</ins></td>
       <td>23.3/74.6</td>
       <td>73.6</td>
     </tr>
@@ -1433,31 +1455,31 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
       <td><b>77.1/85.4</b></td>
       <td><b>76.7/83.9</b></td>
       <td><b>77.6/84.9</b></td>
-      <td><u>25.2/83.7</u></td>
+      <td><ins>25.2/83.7</ins></td>
       <td><b>82.5</b></td>
     </tr>
     <tr>
       <td rowspan="2" style="text-align: center;">Expert VLMs</td>
       <td>StructEqTable</td>
       <td>72.8</td>
-      <td><u>75.9</u></td>
+      <td><ins>75.9</ins></td>
       <td>83.4</td>
       <td>72.9</td>
-      <td><u>76.2</u></td>
+      <td><ins>76.2</ins></td>
       <td>76.9</td>
       <td><b>88</b></td>
       <td>64.5/81</td>
       <td>69.2/76.6</td>
       <td>72.8/76.4</td>
       <td><b>30.5/76.2</b></td>
-      <td><u>75.8</u></td>
+      <td><ins>75.8</ins></td>
     </tr>
     <tr>
       <td>GOT-OCR</td>
       <td>72.2</td>
       <td>75.5</td>
-      <td><u>85.4</u></td>
-      <td><u>73.1</u></td>
+      <td><ins>85.4</ins></td>
+      <td><ins>73.1</ins></td>
       <td>72.7</td>
       <td>78.2</td>
       <td>75.7</td>
@@ -1476,7 +1498,7 @@ OmniDocBench包含每个PDF页面的公式的bounding box信息以及对应的�
       <td>70.2</td>
       <td>62.8</td>
       <td>74.5</td>
-      <td><u>80.3</u></td>
+      <td><ins>80.3</ins></td>
       <td>60.8/76.5</td>
       <td>63.8/72.6</td>
       <td>71.4/70.8</td>
@@ -1633,7 +1655,7 @@ OmniDocBench包含每个PDF页面的所有文档组件的bounding box信息，�
       <td>DiT-L</sup></td>
       <td>ViT-L</td>
       <td>361.6M</td>
-      <td><u>43.44</u></td>
+      <td><ins>43.44</ins></td>
       <td>13.72</td>
       <td>45.85</td>
       <td>15.45</td>
@@ -1654,7 +1676,7 @@ OmniDocBench包含每个PDF页面的所有文档组件的bounding box信息，�
       <td>21.00</td>
       <td>5.48</td>
       <td>31.81</td>
-      <td><u>64.66</u></td>
+      <td><ins>64.66</ins></td>
       <td>0.80</td>
       <td>30.84</td>
       <td>28.84</td>
@@ -1668,9 +1690,9 @@ OmniDocBench包含每个PDF页面的所有文档组件的bounding box信息，�
       <td><strong>72.83</strong></td>
       <td><strong>42.67</strong></td>
       <td><strong>35.40</strong></td>
-      <td><u>51.44</u></td>
-      <td><u>64.64</u></td>
-      <td><u>9.54</u></td>
+      <td><ins>51.44</ins></td>
+      <td><ins>64.64</ins></td>
+      <td><ins>9.54</ins></td>
       <td><strong>57.54</strong></td>
       <td><strong>47.38</strong></td>
     </tr>
@@ -1679,15 +1701,15 @@ OmniDocBench包含每个PDF页面的所有文档组件的bounding box信息，�
       <td>Swin-L</td>
       <td>223M</td>
       <td>42.91</td>
-      <td><u>28.20</u></td>
-      <td><u>47.29</u></td>
-      <td><u>32.44</u></td>
-      <td><u>20.81</u></td>
+      <td><ins>28.20</ins></td>
+      <td><ins>47.29</ins></td>
+      <td><ins>32.44</ins></td>
+      <td><ins>20.81</ins></td>
       <td><strong>52.35</strong></td>
       <td>48.54</td>
       <td><strong>12.38</strong></td>
-      <td><u>38.06</u></td>
-      <td><u>35.89</u></td>
+      <td><ins>38.06</ins></td>
+      <td><ins>35.89</ins></td>
     </tr>
     <tr>
       <td>GraphKD</sup></td>
