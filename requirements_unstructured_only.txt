@@ -1,0 +1,29 @@
+# Unstructured library and core dependencies
+unstructured[pdf]
+unstructured[local-inference]
+
+# Core data processing
+pandas
+numpy
+
+# Visualization and reporting
+matplotlib
+seaborn
+plotly
+
+# PDF processing
+pypdf
+pdfplumber
+PyMuPDF
+
+# Image processing
+pillow
+opencv-python
+pi-heif
+
+# Optional GPU support
+torch
+torchvision
+
+# Utilities
+scikit-learn 
