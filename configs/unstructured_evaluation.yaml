@@ -1,0 +1,27 @@
+# Configuration for evaluating Unstructured results on OmniDocBench
+# This config uses our Unstructured-generated predictions instead of demo data
+
+end2end_eval:
+  metrics:
+    text_block:
+      metric:
+        - Edit_dist
+        - BLEU
+    display_formula:
+      metric:
+        - Edit_dist
+        - CDM
+    table:
+      metric:
+        - TEDS
+        - Edit_dist
+    reading_order:
+      metric:
+        - Edit_dist
+  dataset:
+    dataset_name: end2end_dataset
+    ground_truth:
+      data_path: ./demo_data/omnidocbench_demo/OmniDocBench_demo.json
+    prediction:
+      data_path: ./unstructured_results
+    match_method: quick_match

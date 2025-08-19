@@ -1,21 +1,57 @@
-**/__pycache__/
-# check_data/
-**/.ipynb_checkpoints/
-.ipynb_checkpoints
-**log
-debug.py
-test.py
-run_cal_metric.py
-output/
-old_results
-det_test
-old_configs
-check_data
-trace
-old_demo_data
-old_run_cal_metric.py
-old_test.py
-old_tools
-old_trace
+# Data directories
+data/
+demo_data/
+omnidocbench_demo/
+
+# Results directories
 result/
-configs/
+omniparse_*_results/
+unstructured_results/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large model files
+*.pth
+*.pt
+*.onnx
+*.bin
+
+# Database files
+*.db
+*.sqlite
+
+# Jupyter notebooks
+*.ipynb_checkpoints/
+
+# Poetry
+poetry.lock
